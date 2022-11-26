@@ -18,7 +18,8 @@ node{
     
     stage('Push Docker Image'){
           //withCredentials([string(credentialsId: 'Docker_arif', variable: 'DockerHub-JavWebApp')]) {
-          withCredentials([string(credentialsId: 'Docker_pwd', variable: 'DockerHub-JavWebApp')]) {
+          //withCredentials([string(credentialsId: 'Docker_pwd', variable: 'DockerHub-JavWebApp')]) {
+          withCredentials([string(credentialsId: 'Docker_pwd', variable: 'java-web-app')]) {
           sh "docker login -u arifarimala -p ${Docker_pwd}"
         }
         sh 'docker push arifarimala/java-web-app'
